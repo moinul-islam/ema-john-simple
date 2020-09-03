@@ -8,13 +8,17 @@ const Shop = () => {
     const first10 = fakeData.slice(0, 10);
     const [products, setProducts] = useState(first10);
 
+    const addProduct = (product) => {
+        console.log('Product added', product);
+    }
+
     return (
         <div className="shop-container">
 
             <div className="product-container">
               
                 {
-                    products.map(productValue => <Product product={productValue}></Product>)
+                    products.map(productValue => <Product product={productValue} addProduct={addProduct}></Product>)
                 }
               
             </div>
